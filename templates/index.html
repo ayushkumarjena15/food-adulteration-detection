@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Food Adulteration Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body class="leaf-bg {% if result %}bg-{{ health_risk|lower }}{% endif %}">
+
+    <div class="form-container fade-in">
+        <h1>Food Adulteration Detection</h1>
+        <form action="/predict" method="POST">
+            <label>Product Name:</label>
+            <select name="product_name">
+                {% for p in products %}
+                <option value="{{ p }}">{{ p }}</option>
+                {% endfor %}
+            </select>
+
+            <label>Brand:</label>
+            <select name="brand">
+                {% for b in brands %}
+                <option value="{{ b }}">{{ b }}</option>
+                {% endfor %}
+            </select>
+
+            <label>Adulterant:</label>
+            <select name="adulterant">
+                {% for a in adulterants %}
+                <option value="{{ a }}">{{ a }}</option>
+                {% endfor %}
+            </select>
+
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if result %}
+        <div class="result-card slide-up risk-{{ health_risk|lower }}">
+            <h2><i class="fas fa-apple-alt"></i> Prediction Result</h2>
+            <p><strong>Product:</strong> {{ product }}</p>
+            <p><strong>Brand:</strong> {{ brand }}</p>
+            <p><strong>Adulterant:</strong> {{ adulterant }}</p>
+            <p><strong>Health Risk:</strong> {{ health_risk }}</p>
+            <p><strong>Severity Score:</strong> {{ severity }}</p>
+            <p><strong>Action Taken:</strong> {{ action_taken }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

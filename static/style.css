@@ -1,0 +1,87 @@
+.result-card {
+    margin-top: 30px;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    background: white;
+    text-align: left;
+    font-size: 18px;
+    padding-left: 30px; 
+}
+.result-card h1{
+    text-align: center;
+    margin-bottom: 20px;
+    margin-left: 50px;
+}
+.result-card h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.result-card p {
+    margin: 16px 0;
+}
+
+/* Risk Colors */
+.risk-low { border: 8px solid #4CAF50; }   /* Green */
+.risk-medium { border: 8px solid #FFC107; } /* Yellow */
+.risk-high { border: 8px solid #F44336; }   /* Red */
+
+/* Animation */
+.slide-up {
+    animation: slideUp 1s ease-in-out;
+    background-image: url("/static/images/bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+@keyframes slideUp {
+    from { transform: translateY(40px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+.form-container h1 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 32px;
+    color: #2e7d32; /* Green tone for a food-related feel */
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom,#228B22, #a5d6a7); /* Dark green to light green */
+    min-height: 100vh;
+    body {
+    transition: background 0.6s ease-in-out;
+}
+
+}
+.form-container {
+    background: linear-gradient(#FFFDD0, rgba(255, 255, 255, 0.9)),
+                url("/static/images/bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 650px;
+    margin: 50px auto;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+/* Body background for each risk */
+.bg-low {
+    background: linear-gradient(to bottom, #a8e6a3, #d0f5c9); /* soft green */
+}
+
+.bg-medium {
+    background: linear-gradient(to bottom, #fff9c4, #ffe082); /* soft yellow */
+}
+
+.bg-high {
+    background: linear-gradient(to bottom, #ffcdd2, #ef9a9a); /* soft red */
+}
+
+
